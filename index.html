@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChillaxCoin ($CHLX) - The Premier Digital Asset</title>
+    <!-- NEW: Favicon added directly into the code -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23FFD700'>C</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
@@ -110,13 +112,13 @@
         #main-nav a:hover::before { width: 60%; }
 
         .hero-container {
-            min-height: 85vh; /* Slightly reduced height to bring content up */
+            min-height: 85vh; 
             display: flex;
             flex-direction: column;
             justify-content: center; 
             align-items: center;
             text-align: center;
-            padding: 10px 20px; /* Reduced top/bottom padding */
+            padding: 10px 20px;
             position: relative; 
             overflow: hidden; 
         }
@@ -136,18 +138,18 @@
         }
         
         #mojito-svg-layer {
-            width: 180px; /* Slightly smaller mojito */
+            width: 180px; 
             height: auto;
             position: relative; 
             z-index: 10; 
-            margin-bottom: 10px; /* Reduced margin */
+            margin-bottom: 10px; 
             filter: drop-shadow(6px 18px 22px rgba(0,0,0,0.4)); 
             transition: transform 0.07s linear; 
             animation: float-mojito-2d 7s ease-in-out infinite alternate; 
         }
         @keyframes float-mojito-2d { 
             0% { transform: translateY(0px) rotate(-0.5deg); } 
-            100% { transform: translateY(-8px) rotate(0.5deg); } /* Less float */
+            100% { transform: translateY(-8px) rotate(0.5deg); } 
         }
         #mojito-svg-layer:hover #liquid-group {
             transform-origin: 50% 85%; 
@@ -162,7 +164,7 @@
         .hero-text-content { 
             position: relative;
             z-index: 15; 
-            margin-top: -10px; /* Pull text content slightly up */
+            margin-top: -10px; 
         }
 
         #global-particle-container { 
@@ -203,20 +205,19 @@
             border: 1px solid rgba(255,255,255,0.2);
         }
 
-        /* Contract Address Form */
         .contract-address-container {
-            margin-top: 20px; /* Spacing from text above */
+            margin-top: 20px; 
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 8px;
-            background-color: rgba(23, 42, 69, 0.7); /* var(--primary-light) with opacity */
+            background-color: rgba(23, 42, 69, 0.7); 
             border-radius: 8px;
             border: 1px solid var(--accent-gold);
-            max-width: 450px; /* Limit width */
+            max-width: 450px; 
             margin-left: auto;
             margin-right: auto;
-            position: relative; /* For tooltip */
+            position: relative; 
         }
         .contract-address-text {
             color: var(--text-secondary);
@@ -245,7 +246,7 @@
         }
         .copy-tooltip {
             position: absolute;
-            bottom: 120%; /* Position above the button */
+            bottom: 120%; 
             left: 50%;
             transform: translateX(-50%);
             background-color: var(--primary-dark);
@@ -273,7 +274,7 @@
         }
         .btn-primary:hover {
             background-color: var(--button-hover-bg); transform: translateY(-3px); 
-            box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3); 
+            box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2); 
         }
         .btn-secondary { 
             background-color: transparent; color: var(--accent-gold);
@@ -286,16 +287,157 @@
             background-color: var(--card-bg); backdrop-filter: blur(5px); 
             padding: 30px; border-radius: 12px; 
             box-shadow: 0 8px 30px rgba(0,0,0,0.3); margin-bottom: 30px;
-            border: 1px solid rgba(255, 215, 0, 0.15); 
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .card h3 { color: var(--accent-gold); margin-bottom: 20px; font-weight: 700; }
+        /* NEW: Card hover animation */
+        .card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+        .card h3 { color: var(--accent-gold); margin-bottom: 20px; font-weight: 700; font-size: 1.875rem; text-align:center;}
         
         section { padding-top: 90px; margin-top: -90px; }
         #hero { padding-top: 0; margin-top: 0; } 
         header#page-title-header { 
-            padding-top: 60px; /* Reduced padding to move title up */
-            margin-bottom: 5px; /* Reduced margin */
+            padding-top: 60px; 
+            margin-bottom: 5px; 
         }
+        /* NEW: Title animation */
+        #page-title-header h1 {
+            animation: text-glow 3s ease-in-out infinite alternate;
+        }
+
+        /* NEW: Scroll Animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* NEW: Roadmap Styles */
+        .roadmap-container {
+            position: relative;
+            padding: 40px 0;
+        }
+        .roadmap-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: rgba(255, 215, 0, 0.2);
+        }
+        .roadmap-item {
+            position: relative;
+            width: 50%;
+            padding: 20px 40px;
+            box-sizing: border-box;
+        }
+        .roadmap-item:nth-child(odd) {
+            left: 0;
+            padding-right: 60px; /* Space from center line */
+            text-align: right;
+        }
+        .roadmap-item:nth-child(even) {
+            left: 50%;
+            padding-left: 60px; /* Space from center line */
+        }
+        .roadmap-content {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            position: relative;
+        }
+        .roadmap-item::after { /* The dot on the timeline */
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--primary-light);
+            border: 4px solid var(--accent-gold);
+            border-radius: 50%;
+            z-index: 1;
+            animation: pulse-dot 2s ease-in-out infinite; /* NEW: Dot animation */
+        }
+        .roadmap-item:nth-child(odd)::after {
+            right: -10px;
+        }
+        .roadmap-item:nth-child(even)::after {
+            left: -10px;
+        }
+        .roadmap-item h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+         .roadmap-item p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* NEW: FAQ Styles */
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question:hover {
+            color: var(--accent-gold);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            padding: 0 10px;
+        }
+         .faq-answer p {
+            color: var(--text-secondary);
+            padding-bottom: 20px;
+            line-height: 1.6;
+        }
+        .faq-icon {
+            font-style: normal;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-icon {
+             transform: rotate(45deg);
+        }
+        
+        /* NEW: Keyframe animations */
+        @keyframes pulse-dot {
+            0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }
+        @keyframes text-glow {
+            0% { text-shadow: 1px 1px 10px rgba(255, 215, 0, 0.3); }
+            100% { text-shadow: 1px 1px 20px rgba(255, 215, 0, 0.6); }
+        }
+
 
         @media (max-width: 768px) {
             #main-nav ul { flex-wrap: wrap; justify-content: space-around; }
@@ -312,6 +454,19 @@
             section { padding-top: 120px; margin-top: -120px; }
             #hero { padding-top: 0; margin-top: 0;}
             header#page-title-header { padding-top: 80px; margin-bottom: 0;}
+
+            /* Roadmap Responsive */
+            .roadmap-container::before { left: 20px; }
+            .roadmap-item, .roadmap-item:nth-child(even) {
+                width: 100%;
+                left: 0;
+                padding-left: 60px;
+                padding-right: 20px;
+            }
+            .roadmap-item:nth-child(odd) { text-align: left; }
+            .roadmap-item:nth-child(odd)::after, .roadmap-item:nth-child(even)::after {
+                left: 10px;
+            }
         }
         @media (max-width: 480px) {
             .hero-container { min-height: 70vh;} 
@@ -333,18 +488,17 @@
 </head>
 <body class="text-text-primary">
 
-    <div id="overall-page-background">
-    </div>
-
+    <div id="overall-page-background"></div>
     <div id="global-particle-container"></div>
 
     <nav id="main-nav">
         <div class="container mx-auto px-4">
             <ul>
                 <li><a href="#hero">Home</a></li>
-                <li><a href="#insights">Insights</a></li> 
-                <li><a href="#about">About $CHLX</a></li>
-                <li><a href="#how-to-buy">Acquire</a></li> 
+                <li><a href="#about">About</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#how-to-buy">Acquire</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
         </div>
     </nav>
@@ -352,7 +506,7 @@
     <div class="relative z-10 container mx-auto px-4">
 
         <header id="page-title-header" class="text-center">
-             <h1 class="text-4xl md:text-6xl font-black tracking-tight" style="color: var(--accent-gold); text-shadow: 1px 1px 10px rgba(255,215,0,0.3);">
+             <h1 class="text-4xl md:text-6xl font-black tracking-tight">
                 ChillaxCoin <span class="text-2xl md:text-4xl text-text-primary opacity-80">($CHLX)</span>
             </h1>
         </header>
@@ -367,7 +521,8 @@
             </div>
             
             <svg id="mojito-svg-layer" viewBox="0 0 180 280" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs>
+                <!-- SVG Mojito paths here -->
+                 <defs>
                     <filter id="svgGlassShine" x="-20%" y="-20%" width="140%" height="140%">
                         <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur"/>
                         <feOffset in="blur" dx="1.5" dy="1.5" result="offsetBlur"/>
@@ -388,16 +543,12 @@
                         <stop offset="100%" style="stop-color:rgba(255,255,255,0)" />
                     </radialGradient>
                 </defs>
-
                 <path d="M35 270 L45 60 Q47 35 90 35 Q133 35 135 60 L145 270 Q143 280 90 280 Q37 280 35 270 Z" 
                       fill="url(#svgGlassGradient)" stroke="rgba(200, 220, 230, 0.5)" stroke-width="1" filter="url(#svgGlassShine)"/>
-                
                 <g id="liquid-group">
                     <path d="M47 265 L55 70 Q57 50 90 50 Q123 50 125 70 L133 265 Q131 270 90 270 Q49 270 47 265 Z" 
                           fill="var(--mojito-green)" opacity="0.8" />
                     <ellipse cx="90" cy="70" rx="35" ry="10" fill="url(#liquidSurfaceShine)" opacity="0.7"/>
-
-
                     <g transform="translate(60 120) rotate(-25)">
                         <ellipse cx="0" cy="0" rx="18" ry="12" fill="var(--mojito-lime)" />
                         <ellipse cx="0" cy="0" rx="14" ry="9" fill="#F0FFF0" /> 
@@ -408,20 +559,15 @@
                         <ellipse cx="0" cy="0" rx="16" ry="10" fill="#F0FFF0" />
                         <path d="M0 -10 L0 10 M-7.5 -7.5 L7.5 7.5 M-10 0 L10 0 M-7.5 7.5 L7.5 -7.5" stroke="#9ACD32" stroke-width="0.7" />
                     </g>
-
                     <path d="M55 90 C 50 80, 60 70, 70 75 C 75 85, 65 95, 55 90 Z" fill="var(--mint-green)" opacity="0.9" transform="rotate(10 62 82)"/>
                     <path d="M110 130 C 105 120, 115 110, 125 115 C 130 125, 120 135, 110 130 Z" fill="var(--mint-green)" opacity="0.9" transform="rotate(-15 117 122)"/>
                     <path d="M70 200 C 65 190, 75 180, 85 185 C 90 195, 80 205, 70 200 Z" fill="var(--mint-green)" opacity="0.9" transform="rotate(5 77 192)"/>
-
-
                     <polygon points="60,80 75,85 70,100 55,95" fill="var(--ice-color)" opacity="0.85" transform="rotate(5 65 90)"/>
                     <polygon points="100,100 118,105 110,125 95,118" fill="var(--ice-color)" opacity="0.85" transform="rotate(-8 105 112)"/>
                     <polygon points="80,150 95,158 88,175 73,165" fill="var(--ice-color)" opacity="0.85" transform="rotate(12 85 162)"/>
                     <polygon points="110,210 125,215 120,230 105,225" fill="var(--ice-color)" opacity="0.85" transform="rotate(-5 115 220)"/>
                 </g>
-                
                 <rect x="115" y="30" width="8" height="180" fill="var(--straw-color)" rx="3" transform="rotate(15 119 120)"/>
-                
                 <line x1="55" y1="35" x2="55" y2="80" stroke="var(--umbrella-stick)" stroke-width="3.5" stroke-linecap="round"/>
                 <path d="M25 50 Q55 20 85 50 L 55 55 Z" fill="var(--umbrella-canopy)" stroke="#A52A2A" stroke-width="0.5"/>
                 <circle cx="55" cy="49" r="2.5" fill="var(--accent-gold)"/> 
@@ -435,14 +581,15 @@
                     Discover ChillaxCoin, a premier digital asset engineered for discerning investors. We merge cutting-edge technology with a vision for sustainable growth and exclusivity.
                 </p>
                 <div class="contract-address-container relative">
-                    <span id="contractAddress" class="contract-address-text">CA: YourContractAddressHereAbCdEfGhIjKlMnOpQrStUvWxYz12345</span>
+                    <!-- PLACEHOLDER: Replace with your actual contract address -->
+                    <span id="contractAddress" class="contract-address-text">CA: YourContractAddressHereAbCdEfGhIjKlMnOp</span>
                     <button id="copyButton" class="copy-button">Copy</button>
                     <span id="copyTooltip" class="copy-tooltip">Copied!</span>
                 </div>
             </div>
         </section>
 
-        <section id="insights" class="mb-16 md:mb-24">
+        <section id="insights" class="mb-16 md:mb-24 fade-in-section">
             <div class="card max-w-2xl mx-auto">
                 <h3 class="text-3xl font-bold text-center">Market Insights</h3>
                 <div id="insight-display" class="quote-text text-xl text-center text-text-secondary mb-8 min-h-[70px] flex items-center justify-center">
@@ -450,12 +597,13 @@
                 </div>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                     <button id="new-insight-btn" class="btn-primary w-full sm:w-auto">Next Insight</button>
+                    <!-- PLACEHOLDER: Update the share functionality if needed -->
                     <button id="share-insight-btn" class="btn-primary btn-secondary w-full sm:w-auto">Share Analysis</button>
                 </div>
             </div>
         </section>
         
-        <section id="about" class="mb-16 md:mb-24 text-center">
+        <section id="about" class="mb-16 md:mb-24 text-center fade-in-section">
              <div class="card max-w-3xl mx-auto"> 
                 <h3 class="text-3xl font-bold">About $CHLX</h3>
                 <p class="text-text-secondary text-lg leading-relaxed">
@@ -464,204 +612,325 @@
                 </div>
         </section>
 
-        <section id="how-to-buy" class="text-center">
+        <!-- NEW: Roadmap Section -->
+        <section id="roadmap" class="mb-16 md:mb-24 fade-in-section">
+            <div class="card max-w-4xl mx-auto">
+                <h3>Our Roadmap</h3>
+                <div class="roadmap-container">
+                    <!-- Roadmap Item 1 -->
+                    <div class="roadmap-item fade-in-section">
+                        <div class="roadmap-content">
+                            <h4>Phase 1: Foundation & Launch</h4>
+                            <p>Project conception, whitepaper creation, initial team formation, smart contract development and audit, and the official token launch on a major DEX.</p>
+                        </div>
+                    </div>
+                    <!-- Roadmap Item 2 -->
+                    <div class="roadmap-item fade-in-section">
+                        <div class="roadmap-content">
+                            <h4>Phase 2: Community & Growth</h4>
+                            <p>Community building initiatives, social media marketing campaigns, listings on major coin tracking sites (CoinGecko, CoinMarketCap), and initial influencer partnerships.</p>
+                        </div>
+                    </div>
+                    <!-- Roadmap Item 3 -->
+                    <div class="roadmap-item fade-in-section">
+                        <div class="roadmap-content">
+                            <h4>Phase 3: Ecosystem Expansion</h4>
+                            <p>Development of utility features, exploring CEX listing opportunities, forming strategic partnerships with other projects, and launching our first community governance proposals.</p>
+                        </div>
+                    </div>
+                    <!-- Roadmap Item 4 -->
+                    <div class="roadmap-item fade-in-section">
+                        <div class="roadmap-content">
+                            <h4>Phase 4: Future Vision</h4>
+                            <p>Research into advanced DeFi protocols, NFT integration possibilities, and long-term value creation mechanisms to ensure the sustainability and prosperity of $CHLX.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-to-buy" class="text-center fade-in-section">
             <div class="card max-w-xl mx-auto">
                 <h3 class="text-3xl font-bold">Acquire $CHLX Tokens</h3>
                 <p class="text-text-secondary mb-6">Follow these steps to add $CHLX to your digital asset portfolio:</p>
                 <ol class="list-decimal list-inside text-left text-text-secondary space-y-3 mb-8 mx-auto max-w-md">
-                    <li><strong>Establish a Secure Wallet:</strong> Install a compatible cryptocurrency wallet (e.g., Phantom, Solflare, or other leading Solana wallets).</li>
+                    <li><strong>Establish a Secure Wallet:</strong> Install a compatible Solana wallet (e.g., Phantom, Solflare).</li>
                     <li><strong>Procure SOL:</strong> Acquire Solana (SOL) through a reputable digital currency exchange.</li>
                     <li><strong>Transfer SOL:</strong> Send your SOL from the exchange to your personal wallet address.</li>
-                    <li><strong>Execute Swap:</strong> Navigate to a premier decentralized exchange (DEX) like Raydium or Jupiter. Utilize the swap functionality to exchange your SOL for $CHLX tokens. (Official contract address will be published here).</li>
+                    <li><strong>Execute Swap:</strong> Navigate to a premier DEX like Raydium or Jupiter. Use the swap functionality to exchange SOL for $CHLX.</li>
                 </ol>
-                <button class="btn-primary mt-4">Proceed to Exchange (Link TBD)</button>
+                <!-- PLACEHOLDER: Replace '#' with the actual link to the exchange -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary mt-4 inline-block">Proceed to Exchange</a>
             </div>
         </section>
+        
+        <!-- NEW: FAQ Section -->
+        <section id="faq" class="mb-16 md:mb-24 fade-in-section">
+            <div class="card max-w-3xl mx-auto">
+                <h3>Frequently Asked Questions</h3>
+                <div class="space-y-2">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What is ChillaxCoin ($CHLX)?</span>
+                            <i class="faq-icon">+</i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>$CHLX is a premier digital asset on the Solana blockchain, designed for investors who value sophistication, security, and sustainable growth. It's more than a meme; it's a statement of quality and long-term vision.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Why was Solana chosen for this project?</span>
+                            <i class="faq-icon">+</i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We chose Solana for its high transaction speeds, low fees, and robust, scalable infrastructure. This allows for a seamless and efficient experience for our token holders and future ecosystem applications.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                     <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What is the total supply of $CHLX?</span>
+                            <i class="faq-icon">+</i>
+                        </button>
+                        <div class="faq-answer">
+                            <!-- PLACEHOLDER: Update with actual total supply and tokenomics details -->
+                            <p>The total supply of $CHLX is fixed at 1.000.000.000 tokens. This creates scarcity and is fundamental to our tokenomics, which are designed to reward long-term holders.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                     <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is the smart contract audited?</span>
+                            <i class="faq-icon">+</i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. Security is our top priority. The $CHLX smart contract has undergone a comprehensive audit by a reputable third-party firm to ensure its integrity and the safety of our investors' funds. The audit report is publicly available for review.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 5 -->
+                     <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How can I join the ChillaxCoin community?</span>
+                            <i class="faq-icon">+</i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We'd be delighted to have you! You can join our vibrant community on X (formerly Twitter) and Telegram. Follow our social media channels for the latest news, updates, and discussions. Links are in the footer of this page.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <footer class="text-center py-16 mt-12 border-t border-gray-700">
             <p class="text-text-secondary opacity-80">&copy; 2025 ChillaxCoin. All Rights Reserved. An Elite Digital Asset.</p>
             <div class="mt-6 space-x-6">
-                <a href="#" class="text-text-secondary hover:text-accent-gold transition-colors duration-300">X (Twitter)</a>
-                <a href="#" class="text-text-secondary hover:text-accent-gold transition-colors duration-300">Telegram</a>
+                <!-- PLACEHOLDER: Replace '#' with your actual social media links -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-text-secondary hover:text-accent-gold transition-colors duration-300">X (Twitter)</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-text-secondary hover:text-accent-gold transition-colors duration-300">Telegram</a>
             </div>
         </footer>
 
     </div>
 
     <script>
-        const heroContainer = document.getElementById('hero');
-        const mojitoLayer = document.getElementById('mojito-svg-layer');
-        const heroBgLayer = document.getElementById('hero-background-image-layer');
-        const globalParticleContainer = document.getElementById('global-particle-container'); 
-        const copyButton = document.getElementById('copyButton');
-        const contractAddressSpan = document.getElementById('contractAddress');
-        const copyTooltip = document.getElementById('copyTooltip');
+        document.addEventListener('DOMContentLoaded', () => {
 
-        if (heroContainer && mojitoLayer && heroBgLayer) {
-            // Параллакс для фона и бокала
-            heroContainer.addEventListener('mousemove', function(e) {
-                const rect = heroContainer.getBoundingClientRect();
-                const x = e.clientX - rect.left - (rect.width / 2);
-                const y = e.clientY - rect.top - (rect.height / 2);
+            const heroContainer = document.getElementById('hero');
+            const mojitoLayer = document.getElementById('mojito-svg-layer');
+            const heroBgLayer = document.getElementById('hero-background-image-layer');
+            const globalParticleContainer = document.getElementById('global-particle-container'); 
+            const copyButton = document.getElementById('copyButton');
+            const contractAddressSpan = document.getElementById('contractAddress');
+            const copyTooltip = document.getElementById('copyTooltip');
 
-                const parallaxFactorBgX = 0.015; 
-                const parallaxFactorBgY = 0.007; 
-                const parallaxFactorMojitoX = 0.03; 
-                const parallaxFactorMojitoY = 0.02;
-
-                const bgTranslateX = -x * parallaxFactorBgX;
-                const bgTranslateY = -y * parallaxFactorBgY; 
-                
-                requestAnimationFrame(() => {
-                    heroBgLayer.style.transform = `translate(${bgTranslateX}px, ${bgTranslateY}px)`; 
+            // Parallax effect
+            if (heroContainer && mojitoLayer && heroBgLayer) {
+                heroContainer.addEventListener('mousemove', function(e) {
+                    const rect = heroContainer.getBoundingClientRect();
+                    const x = e.clientX - rect.left - (rect.width / 2);
+                    const y = e.clientY - rect.top - (rect.height / 2);
+                    const parallaxFactorBgX = 0.015, parallaxFactorBgY = 0.007; 
+                    const parallaxFactorMojitoX = 0.03, parallaxFactorMojitoY = 0.02;
+                    const bgTranslateX = -x * parallaxFactorBgX;
+                    const bgTranslateY = -y * parallaxFactorBgY; 
+                    const mojitoPosX = -x * parallaxFactorMojitoX;
+                    const mojitoPosY = -y * parallaxFactorMojitoY;
+                    requestAnimationFrame(() => {
+                        heroBgLayer.style.transform = `translate(${bgTranslateX}px, ${bgTranslateY}px)`; 
+                        mojitoLayer.style.transform = `translate(${mojitoPosX}px, ${mojitoPosY}px)`;
+                    });
                 });
-                
-                const mojitoPosX = -x * parallaxFactorMojitoX;
-                const mojitoPosY = -y * parallaxFactorMojitoY;
-                 requestAnimationFrame(() => {
-                    mojitoLayer.style.transform = `translate(${mojitoPosX}px, ${mojitoPosY}px)`;
+                heroContainer.addEventListener('mouseleave', () => {
+                     requestAnimationFrame(() => {
+                        heroBgLayer.style.transform = `translate(0px, 0px)`;
+                        mojitoLayer.style.transform = `translate(0px, 0px)`;
+                    });
                 });
-            });
-
-            heroContainer.addEventListener('mouseleave', function() {
-                 requestAnimationFrame(() => {
-                    heroBgLayer.style.transform = `translate(0px, 0px)`;
-                    mojitoLayer.style.transform = `translate(0px, 0px)`;
-                });
-            });
-        }
-
-        // Копирование адреса контракта
-        if (copyButton && contractAddressSpan && copyTooltip) {
-            copyButton.addEventListener('click', () => {
-                const addressText = contractAddressSpan.textContent.replace('CA: ', '').trim();
-                navigator.clipboard.writeText(addressText).then(() => {
-                    copyTooltip.classList.add('visible');
-                    setTimeout(() => {
-                        copyTooltip.classList.remove('visible');
-                    }, 1500);
-                }).catch(err => {
-                    console.error('Failed to copy text: ', err);
-                    // Можно добавить уведомление об ошибке, если нужно
-                });
-            });
-        }
-
-
-        // Анимация вылетающих частиц
-        if (mojitoLayer && globalParticleContainer) { 
-            mojitoLayer.addEventListener('mouseenter', () => {
-                for (let i = 0; i < 12; i++) { 
-                    createParticle();
-                }
-            });
-        }
-
-        function createParticle() {
-            if (!globalParticleContainer) return; 
-
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-
-            const isCoin = Math.random() > 0.4; 
-            if (isCoin) {
-                particle.classList.add('solana-coin');
-            } else {
-                particle.classList.add('dollar-bill');
-                particle.textContent = '$';
             }
 
-            const mojitoRect = mojitoLayer.getBoundingClientRect();
-            
-            // Начальная позиция относительно viewport
-            const initialX = mojitoRect.left + mojitoRect.width / 2 + (Math.random() - 0.5) * 40; 
-            const initialY = mojitoRect.top + mojitoRect.height * 0.15 + (Math.random() - 0.5) * 20; 
+            // Copy contract address
+            if (copyButton && contractAddressSpan && copyTooltip) {
+                copyButton.addEventListener('click', () => {
+                    const addressText = contractAddressSpan.textContent.replace('CA: ', '').trim();
+                    // Using execCommand for broader compatibility within iFrames
+                    const dummy = document.createElement("textarea");
+                    document.body.appendChild(dummy);
+                    dummy.value = addressText;
+                    dummy.select();
+                    try {
+                        document.execCommand("copy");
+                        copyTooltip.classList.add('visible');
+                        setTimeout(() => copyTooltip.classList.remove('visible'), 1500);
+                    } catch (err) {
+                        console.error('Failed to copy text: ', err);
+                    }
+                    document.body.removeChild(dummy);
+                });
+            }
 
-            particle.style.left = `${initialX}px`;
-            particle.style.top = `${initialY}px`;
-            
-            globalParticleContainer.appendChild(particle);
+            // Particle animation
+            if (mojitoLayer && globalParticleContainer) { 
+                mojitoLayer.addEventListener('mouseenter', () => {
+                    for (let i = 0; i < 12; i++) createParticle();
+                });
+            }
 
-            const duration = Math.random() * 1.8 + 1.2; 
-            const angle = (Math.random() - 0.5) * Math.PI * 0.9; 
-            const distance = Math.random() * 180 + 120; 
-
-            const endX = Math.sin(angle) * distance;
-            const endY = -Math.cos(angle) * distance - 70; 
-            const rotationStart = (Math.random() - 0.5) * 90;
-            const rotationEnd = rotationStart + (Math.random() - 0.5) * 1080; 
-
-            particle.animate([
-                { transform: `translate(0px, 0px) scale(0.3) rotate(${rotationStart}deg)`, opacity: 1 },
-                { opacity: 0.9, offset: 0.1 }, 
-                { transform: `translate(${endX * 0.6}px, ${endY * 0.6}px) scale(1.3) rotate(${rotationEnd * 0.5}deg)`, opacity: 0.7, offset: 0.7 },
-                { transform: `translate(${endX}px, ${endY}px) scale(0.2) rotate(${rotationEnd}deg)`, opacity: 0 }
-            ], {
-                duration: duration * 1000,
-                easing: 'cubic-bezier(0.1, 0.7, 0.3, 1)', 
-                fill: 'forwards'
-            });
-
-            setTimeout(() => {
-                if (particle.parentNode) {
-                    particle.parentNode.removeChild(particle);
-                }
-            }, duration * 1000);
-        }
-
-        // Текст для инсайтов и логика их отображения (переведены на английский)
-        const insights = [
-            "Strategic diversification is key to long-term portfolio resilience. $CHLX offers a unique value proposition.",
-            "Blockchain technology continues to revolutionize industries. Early adoption of promising assets like $CHLX can yield significant returns.",
-            "In-depth market analysis suggests a bullish outlook for well-structured digital assets in the coming fiscal year.",
-            "The $CHLX tokenomics are designed for sustainable growth and investor confidence.",
-            "Security and transparency are paramount in the digital asset space. $CHLX is committed to upholding the highest standards."
-        ];
-        const insightDisplay = document.getElementById('insight-display');
-        const newInsightBtn = document.getElementById('new-insight-btn');
-        const shareInsightBtn = document.getElementById('share-insight-btn');
-
-        function getRandomInsight() {
-            return insights[Math.floor(Math.random() * insights.length)];
-        }
-
-        if(newInsightBtn && insightDisplay) { 
-            newInsightBtn.addEventListener('click', () => {
-                insightDisplay.textContent = getRandomInsight();
-            });
-            insightDisplay.textContent = getRandomInsight(); // Initialize with a random insight
-        }
-
-        if(shareInsightBtn && insightDisplay) { 
-            shareInsightBtn.addEventListener('click', () => {
-                const currentInsight = insightDisplay.textContent;
-                if (currentInsight && currentInsight !== "Click for the latest analysis.") { 
-                    const textToShare = `Insight from $CHLX: ${currentInsight} #ChillaxCoin #DigitalAsset #Investment`; 
-                    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(textToShare)}`;
-                    window.open(twitterUrl, '_blank');
+            function createParticle() {
+                if (!globalParticleContainer) return; 
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                const isCoin = Math.random() > 0.4; 
+                if (isCoin) {
+                    particle.classList.add('solana-coin');
                 } else {
-                    const notification = document.createElement('div');
-                    notification.textContent = "Generate an insight first!"; 
-                    notification.style.cssText = "position:fixed; top:20px; left:50%; transform:translateX(-50%); background:var(--accent-gold); color:var(--primary-dark); padding:12px 22px; border-radius:8px; z-index:1000; box-shadow: 0 3px 12px rgba(0,0,0,0.3); font-weight:500;";
-                    document.body.appendChild(notification);
-                    setTimeout(() => notification.remove(), 3000);
+                    particle.classList.add('dollar-bill');
+                    particle.textContent = '$';
                 }
-            });
-        }
+                const mojitoRect = mojitoLayer.getBoundingClientRect();
+                const initialX = mojitoRect.left + mojitoRect.width / 2 + (Math.random() - 0.5) * 40; 
+                const initialY = mojitoRect.top + mojitoRect.height * 0.15 + (Math.random() - 0.5) * 20; 
+                particle.style.left = `${initialX}px`;
+                particle.style.top = `${initialY}px`;
+                globalParticleContainer.appendChild(particle);
+                const duration = Math.random() * 1.8 + 1.2; 
+                const angle = (Math.random() - 0.5) * Math.PI * 0.9; 
+                const distance = Math.random() * 180 + 120; 
+                const endX = Math.sin(angle) * distance;
+                const endY = -Math.cos(angle) * distance - 70; 
+                const rotationStart = (Math.random() - 0.5) * 90;
+                const rotationEnd = rotationStart + (Math.random() - 0.5) * 1080; 
+                particle.animate([
+                    { transform: `translate(0px, 0px) scale(0.3) rotate(${rotationStart}deg)`, opacity: 1 },
+                    { opacity: 0.9, offset: 0.1 }, 
+                    { transform: `translate(${endX * 0.6}px, ${endY * 0.6}px) scale(1.3) rotate(${rotationEnd * 0.5}deg)`, opacity: 0.7, offset: 0.7 },
+                    { transform: `translate(${endX}px, ${endY}px) scale(0.2) rotate(${rotationEnd}deg)`, opacity: 0 }
+                ], { duration: duration * 1000, easing: 'cubic-bezier(0.1, 0.7, 0.3, 1)', fill: 'forwards' });
+                setTimeout(() => particle.parentNode && particle.parentNode.removeChild(particle), duration * 1000);
+            }
 
-        document.querySelectorAll('#main-nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+            // Market Insights
+            // NEW: Added more insights for variety
+            const insights = [
+                "Strategic diversification is key to long-term portfolio resilience. $CHLX offers a unique value proposition.",
+                "Blockchain technology continues to revolutionize industries. Early adoption of promising assets like $CHLX can yield significant returns.",
+                "In-depth market analysis suggests a bullish outlook for well-structured digital assets in the coming fiscal year.",
+                "The $CHLX tokenomics are designed for sustainable growth and investor confidence.",
+                "Security and transparency are paramount in the digital asset space. $CHLX is committed to upholding the highest standards.",
+                "Market volatility is a test of project fundamentals. Strong communities like ours are the bedrock of stability.",
+                "As DeFi adoption grows, the demand for high-quality, secure assets on efficient chains like Solana is expected to increase.",
+                "Look beyond the hype. The true value lies in a project's utility, team, and long-term vision.",
+                "Patient capital is often the most rewarded. Our roadmap is not a sprint; it's a marathon for enduring success.",
+                "Community engagement is a leading indicator of a project's health. We're proud of our active and supportive community."
+            ];
+            const insightDisplay = document.getElementById('insight-display');
+            const newInsightBtn = document.getElementById('new-insight-btn');
+            const shareInsightBtn = document.getElementById('share-insight-btn');
+
+            if(newInsightBtn && insightDisplay) { 
+                const getRandomInsight = () => insights[Math.floor(Math.random() * insights.length)];
+                newInsightBtn.addEventListener('click', () => insightDisplay.textContent = getRandomInsight());
+                insightDisplay.textContent = getRandomInsight();
+            }
+
+            if(shareInsightBtn && insightDisplay) { 
+                shareInsightBtn.addEventListener('click', () => {
+                    const currentInsight = insightDisplay.textContent;
+                    if (currentInsight && currentInsight !== "Click for the latest analysis.") { 
+                        const textToShare = `Insight from $CHLX: ${currentInsight} #ChillaxCoin #DigitalAsset #Investment`; 
+                        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(textToShare)}`;
+                        window.open(twitterUrl, '_blank');
+                    } else {
+                        const notification = document.createElement('div');
+                        notification.textContent = "Generate an insight first!"; 
+                        notification.style.cssText = "position:fixed; top:20px; left:50%; transform:translateX(-50%); background:var(--accent-gold); color:var(--primary-dark); padding:12px 22px; border-radius:8px; z-index:1000; box-shadow: 0 3px 12px rgba(0,0,0,0.3); font-weight:500;";
+                        document.body.appendChild(notification);
+                        setTimeout(() => notification.remove(), 3000);
+                    }
+                });
+            }
+
+            // Smooth scrolling for nav links
+            document.querySelectorAll('#main-nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
             });
+
+            // NEW: FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const button = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-icon');
+
+                button.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.maxHeight = 0;
+                            otherItem.querySelector('.faq-icon').textContent = '+';
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (isActive) {
+                        item.classList.remove('active');
+                        answer.style.maxHeight = 0;
+                        icon.textContent = '+';
+                    } else {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        icon.textContent = '×';
+                    }
+                });
+            });
+
+            // NEW: Scroll Animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+
         });
-        
-        console.log("DEBUG: 2D Parallax version loaded. Hero structure revised. Particle animation added. Site translated to English.");
-
     </script>
     </body>
 </html>
