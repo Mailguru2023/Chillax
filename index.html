@@ -42,7 +42,7 @@
         }
 
         /* * ==============================================
-         * Original Background
+         * Background
          * ==============================================
          */
         #overall-page-background {
@@ -113,12 +113,16 @@
             100% { width: 150vmax; opacity: 0; transform: rotate(var(--angle)) translateX(20vw); }
         }
 
+        /* * ==============================================
+         * Improved Waves
+         * ==============================================
+         */
         .ocean-wave-container {
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 200%;
-            height: 200px;
+            width: 100%;
+            height: 250px; /* Increased height for better effect */
             overflow: hidden;
             z-index: 6;
         }
@@ -128,23 +132,33 @@
             left: 0;
             width: 200%;
             height: 100%;
-            background-repeat: repeat-x;
             background-size: 50% 100%;
+            background-repeat: repeat-x;
             animation: wave-flow 20s linear infinite;
         }
-        .ocean-wave.wave1 {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%233AAFA9' fill-opacity='0.5' d='M0,128L48,138.7C96,149,192,171,288,170.7C384,171,480,149,576,133.3C672,117,768,107,864,117.3C960,128,1056,160,1152,176C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-            animation-duration: 25s; opacity: 0.7; bottom: 0;
+        .wave1 {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3e%3cpath fill='rgba(73, 190, 183, 0.5)' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,133.3C672,117,768,139,864,165.3C960,192,1056,224,1152,218.7C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3e%3c/path%3e%3c/svg%3e");
+            animation-duration: 22s;
+            bottom: 0;
         }
-        .ocean-wave.wave2 {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%232B7A78' fill-opacity='0.4' d='M0,192L48,176C96,160,192,128,288,133.3C384,139,480,181,576,186.7C672,192,768,160,864,144C960,128,1056,128,1152,149.3C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-            animation-duration: 18s; animation-direction: reverse; opacity: 0.6; bottom: 5px;
+        .wave2 {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3e%3cpath fill='rgba(42, 82, 138, 0.5)' d='M0,224L48,208C96,192,192,160,288,165.3C384,171,480,213,576,240C672,267,768,277,864,256C960,235,1056,181,1152,170.7C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3e%3c/path%3e%3c/svg%3e");
+            animation-duration: 18s;
+            animation-direction: reverse;
+            opacity: 0.8;
+            bottom: 5px;
         }
-        .ocean-wave.wave3 {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%2317252A' fill-opacity='0.3' d='M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,250.7C672,256,768,224,864,197.3C960,171,1056,149,1152,160C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-            animation-duration: 30s; opacity: 0.5; bottom: 10px;
+        .wave3 {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3e%3cpath fill='rgba(28, 61, 110, 0.5)' d='M0,96L40,117.3C80,139,160,181,240,186.7C320,192,400,160,480,149.3C560,139,640,149,720,176C800,203,880,245,960,250.7C1040,256,1120,224,1200,197.3C1280,171,1360,149,1400,138.7L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z'%3e%3c/path%3e%3c/svg%3e");
+            animation-duration: 30s;
+            opacity: 0.7;
+            bottom: 10px;
         }
-        @keyframes wave-flow { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        /* Animation for the waves (FIXED) */
+        @keyframes wave-flow {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
 
         /* * ==============================================
          * Navigation
@@ -157,8 +171,8 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             border-bottom: 1px solid rgba(255, 215, 0, 0.2);
         }
-        #main-nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; align-items: center; }
-        #main-nav li { margin: 0 15px; }
+        #main-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
+        #main-nav li { margin: 5px 15px; }
         #main-nav a {
             color: var(--text-secondary); text-decoration: none; padding: 12px 18px;
             border-radius: 8px; font-weight: 600; text-transform: uppercase;
@@ -341,13 +355,127 @@
         header#page-title-header { padding-top: 60px; margin-bottom: 5px; }
 
         /* * ==============================================
+         * Roadmap Styles
+         * ==============================================
+         */
+        .roadmap-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .roadmap-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            bottom: 20px;
+            width: 4px;
+            background-color: rgba(255, 199, 0, 0.2);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        .roadmap-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        .roadmap-item:nth-child(odd) {
+            padding-right: calc(50% + 30px);
+            text-align: right;
+        }
+        .roadmap-item:nth-child(even) {
+            padding-left: calc(50% + 30px);
+            text-align: left;
+        }
+        .roadmap-dot {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--accent-gold);
+            border: 4px solid var(--primary-light);
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px var(--accent-gold);
+        }
+        .roadmap-content {
+            background: rgba(23, 42, 69, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 199, 0, 0.2);
+            display: inline-block;
+            width: 90%;
+        }
+        .roadmap-content h4 {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        .roadmap-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+            color: var(--text-secondary);
+        }
+
+        /* * ==============================================
+         * FAQ Styles
+         * ==============================================
+         */
+        .faq-item {
+            background-color: rgba(23, 42, 69, 0.5);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 199, 0, 0.2);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: none;
+            border: none;
+            text-align: left;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .faq-question:hover {
+            background-color: rgba(255, 199, 0, 0.1);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            color: var(--text-secondary);
+            padding: 0 20px;
+        }
+        .faq-answer p {
+            padding-bottom: 20px;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Adjust as needed */
+        }
+        .faq-arrow {
+            transition: transform 0.3s ease;
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+        }
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+
+        /* * ==============================================
          * Media Queries
          * ==============================================
          */
         @media (max-width: 768px) {
-            #main-nav ul { flex-wrap: wrap; justify-content: space-around; }
+            #main-nav a { padding: 10px 8px; font-size: 0.7rem;}
             #main-nav li { margin: 5px; }
-            #main-nav a { padding: 10px 12px; font-size: 0.75rem;}
             .hero-container { min-height: 75vh; }
             #palm-trees-layer { height: 50%; }
             .palm-img { max-height: 280px; }
@@ -361,6 +489,9 @@
             section { padding-top: 120px; margin-top: -120px; }
             #hero { padding-top: 0; margin-top: 0;}
             header#page-title-header { padding-top: 80px; margin-bottom: 0;}
+            .roadmap-container::before { left: 10px; transform: translateX(0); }
+            .roadmap-item:nth-child(odd), .roadmap-item:nth-child(even) { padding: 0 0 0 40px; text-align: left; }
+            .roadmap-dot { left: 10px; }
         }
         @media (max-width: 480px) {
             .hero-container { min-height: 70vh;}
@@ -402,8 +533,10 @@
             <ul>
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#insights">Insights</a></li>
-                <li><a href="#about">About $CHLX</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#how-to-buy">Buy</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
         </div>
     </nav>
@@ -453,9 +586,9 @@
                     </p>
                 </div>
                 <div class="contract-address-container hero-text-panel relative mt-4">
-                    <span id="contractAddress" class="contract-address-text">CA: WILL BE ANOUNCED SOON</span>
+                    <span id="contractAddress" class="contract-address-text">CA: WILL BE ANNOUNCED SOON</span>
                     <button id="copyButton" class="copy-button">Copy</button>
-                    <span id="copyTooltip" class="copy-tooltip">Copied!</span>
+                    <span id="copyTooltip" class="copy-tooltip">Скопировано!</span>
                 </div>
             </div>
         </section>
@@ -491,11 +624,104 @@
                 <button class="btn-primary mt-4">Go to Exchange (TBD)</button>
             </div>
         </section>
+
+        <!-- Roadmap Section (Restored) -->
+        <section id="roadmap" class="mb-16 md:mb-24">
+            <div class="card max-w-4xl mx-auto">
+                <h3 class="text-3xl font-bold text-center mb-12">Our Development Plan</h3>
+                <div class="roadmap-container">
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-content">
+                            <h4>Phase 1: The Foundation</h4>
+                            <ul>
+                                <li>✓ Token Launch on Solana</li>
+                                <li>✓ Website & Socials Launch</li>
+                                <li>✓ Initial Community Building</li>
+                                <li>✓ DEX Listing (Raydium)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-content">
+                            <h4>Phase 2: Growth & Vibe</h4>
+                            <ul>
+                                <li>- First Marketing Push</li>
+                                <li>- Influencer Collaborations</li>
+                                <li>- CoinGecko & CoinMarketCap Listing</li>
+                                <li>- Community Contests & Giveaways</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-content">
+                            <h4>Phase 3: Utility & Chill</h4>
+                            <ul>
+                                <li>- $CHLX Staking Platform</li>
+                                <li>- Exclusive NFT Collection for Holders</li>
+                                <li>- First CEX Listings</li>
+                                <li>- Merchandise Store</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-content">
+                            <h4>Phase 4: The Horizon</h4>
+                            <ul>
+                                <li>- Global Expansion</li>
+                                <li>- Top Tier CEX Listings</li>
+                                <li>- Secret "Project Mojito" Unveiling</li>
+                                <li>- Annual Chillax Festival</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section (Restored) -->
+        <section id="faq" class="mb-16 md:mb-24">
+            <div class="card max-w-4xl mx-auto">
+                <h3 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h3>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">What is ChillaxCoin? <span class="faq-arrow">▾</span></button>
+                        <div class="faq-answer">
+                            <p>$CHLX is a digital asset on the Solana blockchain, designed for those who appreciate a relaxed approach to investing. We combine a fun, tropical vibe with solid technology for sustainable growth.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What is the total supply? <span class="faq-arrow">▾</span></button>
+                        <div class="faq-answer">
+                            <p>The total supply of $CHLX is fixed to ensure scarcity and long-term value. You can find the exact number on the official Solana chain explorers by checking our contract address.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Is it secure? <span class="faq-arrow">▾</span></button>
+                        <div class="faq-answer">
+                            <p>Yes. The contract is deployed on the robust and secure Solana network. We have taken all necessary steps to ensure the safety of the contract and our holders' assets.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What is the vision for the future? <span class="faq-arrow">▾</span></button>
+                        <div class="faq-answer">
+                            <p>Our vision is to build a strong, lasting community around the idea of "chilled" investing. We plan to introduce staking, NFTs, and real-world utilities that enhance the ChillaxCoin experience. See our roadmap for more details!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <!-- Footer -->
         <footer class="text-center py-16 mt-12 border-t border-gray-700/50">
             <p class="text-text-secondary opacity-80">&copy; 2025 ChillaxCoin. All Rights Reserved. Relax and get rich.</p>
-            <div class="mt-6 space-x-6"><a href="#" class="text-text-secondary hover:text-accent-gold transition-colors duration-300">X (Twitter)</a><a href="#" class="text-text-secondary hover:text-accent-gold transition-colors duration-300">Telegram</a><a href="#" class="text-text-secondary hover:text-accent-gold transition-colors duration-300">Medium</a></div>
+            <div class="mt-6 space-x-6">
+                <a href="https://x.com/chillaxcoin2025" target="_blank" class="text-text-secondary hover:text-accent-gold transition-colors duration-300">X (Twitter)</a>
+                <a href="https://t.me/chillaxcoin" target="_blank" class="text-text-secondary hover:text-accent-gold transition-colors duration-300">Telegram</a>
+            </div>
         </footer>
     </div>
 
@@ -679,6 +905,19 @@
         if(shareOnXBtn) { shareOnXBtn.addEventListener('click', () => { if (currentTweetText) { const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(currentTweetText)}`; window.open(twitterUrl, '_blank'); if(shareModal) shareModal.classList.remove('visible'); } }); }
         if(copyTweetBtn && copyTweetTooltip) { copyTweetBtn.addEventListener('click', () => { if (currentTweetText) { try { const textArea = document.createElement("textarea"); textArea.value = currentTweetText; textArea.style.position = "fixed"; textArea.style.left = "-9999px"; document.body.appendChild(textArea); textArea.focus(); textArea.select(); document.execCommand('copy'); document.body.removeChild(textArea); copyTweetTooltip.classList.add('visible'); setTimeout(() => { copyTweetTooltip.classList.remove('visible'); }, 1500); } catch (err) { console.error('Failed to copy tweet:', err); } } }); }
 
+        // --- FAQ Accordion Logic ---
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const currentlyActive = document.querySelector('.faq-item.active');
+                if (currentlyActive && currentlyActive !== item) {
+                    currentlyActive.classList.remove('active');
+                }
+                item.classList.toggle('active');
+            });
+        });
+
         // --- Smooth Scroll for Anchors ---
         document.querySelectorAll('#main-nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -691,7 +930,7 @@
             });
         });
 
-        console.log("ChillaxCoin V5 with dynamic cocktail container is ready. Enjoy the vibe!");
+        console.log("ChillaxCoin V6 with Roadmap, FAQ, and new waves is ready. Enjoy the vibe!");
 
     </script>
     </body>
